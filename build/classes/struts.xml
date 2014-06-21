@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.patternMatcher" value="namedVariable" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+			<result-type name="dispatcher" default="true"
+				class="org.apache.struts2.dispatcher.ServletDispatcherResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="initialization"
+				class="com.hieulm.interceptor.InitializationInterceptor"></interceptor>
+			<interceptor-stack name="initStack">
+				<interceptor-ref name="initialization"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="initStack"></default-interceptor-ref>
+
+		<action name="index" class="com.hieulm.action.IndexAction">
+			<result name="success" type="tiles">index</result>
+		</action>
+
+		<action name="index2" class="com.hieulm.action.IndexAction">
+			<result name="success" type="tiles">index</result>
+		</action>
+
+		<!-- <action name="category" class="com.hieulm.action.CategoryAction"> 
+			<result name="success" type="tiles">category</result> </action> -->
+
+		<action name="dienthoai" class="com.hieulm.action.MobileAction">
+			<result name="success" type="tiles">dienthoai</result>
+			<result name="error" type="tiles">index</result>
+		</action>
+
+		<action name="chitietdienthoai" class="com.hieulm.action.MobileDetailAction">
+			<result name="success" type="tiles">chitiet</result>
+		</action>
+
+		<action name="dangnhap_form" class="com.hieulm.action.LoginFormAction">
+			<result name="success" type="tiles">dangnhap_form</result>
+		</action>
+
+		<action name="dangky_form" class="com.hieulm.action.RegisterFormAction">
+			<result name="success" type="tiles">dangky_form</result>
+			<result name="account" type="redirectAction">
+				<param name="actionName">taikhoan</param>
+			</result>
+		</action>
+
+		<action name="dangky" class="com.hieulm.action.RegisterAction">
+			<result name="success" type="tiles">dangky_success</result>
+			<result name="error" type="tiles">dangky_error</result>
+			<result name="input" type="tiles">dangky_form</result>
+			<result name="account" type="redirectAction">
+				<param name="actionName">taikhoan</param>
+			</result>
+		</action>
+
+		<action name="dangnhap" class="com.hieulm.action.LoginAction">
+			<result name="success" type="tiles">index</result>
+			<result name="error" type="tiles">dangnhap_error</result>
+		</action>
+
+		<action name="dangxuat" class="com.hieulm.action.LogoutAction">
+			<result name="success" type="tiles">index</result>
+			<result name="error" type="tiles">index</result>
+		</action>
+
+
+
+		<action name="taikhoan" class="com.hieulm.action.AccountAction">
+			<result name="success" type="tiles">taikhoan</result>
+			<result name="error" type="tiles">index</result>
+		</action>
+
+		<action name="ckeditor" class="com.hieulm.action.CkEditorAction">
+			<result name="success" type="dispatcher">ckeditor.jsp</result>
+		</action>
+
+		<action name="xemgiohang" class="com.hieulm.action.ShowCartAction">
+			<result name="success" type="tiles">cart</result>
+		</action>
+
+		<action name="capnhatgiohang" class="com.hieulm.action.UpdateCartAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">xemgiohang</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">xemgiohang</param>
+			</result>
+		</action>
+
+		<action name="themsanpham" class="com.hieulm.action.AddToCartAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">xemgiohang</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">xemgiohang</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+			<result-type name="dispatcher" default="true"
+				class="org.apache.struts2.dispatcher.ServletDispatcherResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="initialization"
+				class="com.hieulm.interceptor.InitializationInterceptor"></interceptor>
+			<interceptor name="adminAuth"
+				class="com.hieulm.interceptor.AdminAuthenticationInterceptor"></interceptor>
+			<interceptor-stack name="adminAuthStack">
+				<interceptor-ref name="initialization"></interceptor-ref>
+				<interceptor-ref name="adminAuth"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="adminAuthStack"></default-interceptor-ref>
+
+		<action name="index" class="com.hieulm.action.admin.IndexAction">
+			<result name="success" type="tiles">adminIndex</result>
+			<result name="error" type="tiles">dangnhap_form</result>
+		</action>
+
+		<action name="accounts" class="com.hieulm.action.admin.AccountsAction">
+			<result name="success" type="tiles">adminAccounts</result>
+			<result name="error" type="tiles">dangnhap_form</result>
+		</action>
+
+		<action name="brands" class="com.hieulm.action.admin.BrandsAction">
+			<result name="success" type="tiles">adminBrands</result>
+			<result name="error" type="tiles">dangnhap_form</result>
+		</action>
+		
+		<action name="mobiles" class="com.hieulm.action.admin.MobilesAction">
+			<result name="success" type="tiles">adminMobiles</result>
+			<result name="error" type="tiles">dangnhap_form</result>
+		</action>
+		
+		<action name="add_mobile_form" class="com.hieulm.action.admin.MobileAddFormAction">
+			<result name="success" type="tiles">adminMobileAddForm</result>
+			<result name="error" type="tiles">dangnhap_form</result>
+		</action>
+	</package>
+</struts>
+
+

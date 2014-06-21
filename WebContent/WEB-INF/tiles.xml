@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="index" template="/pages/index.jsp">
+		<put-attribute name="head" value="/tiles/head.jsp" />
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="banner" value="/tiles/banner.jsp" />
+		<put-attribute name="content" value="/tiles/content.jsp" />
+		<put-attribute name="quickview" value="/tiles/quickview.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="dienthoai" template="/pages/category.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="breadcum">/tiles/breadcum.jsp</put-attribute>
+		<put-attribute name="col-left">/tiles/col-left.jsp</put-attribute>
+		<put-attribute name="col-main">/tiles/col-main-mobile.jsp</put-attribute>
+		<put-attribute name="news-letter">/tiles/news-letter.jsp</put-attribute>
+		<put-attribute name="quickview" value="/tiles/quickview.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<!-- <definition name="hangsx" template="/pages/hangsx.jsp"> <put-attribute 
+		name="head" value="/tiles/head.jsp" /> <put-attribute name="header" value="/tiles/header.jsp" 
+		/> <put-attribute name="footer" value="/tiles/footer.jsp" /> </definition> -->
+
+	<definition name="chitiet" template="/pages/chitiet.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="breadcum">/tiles/breadcum.jsp</put-attribute>
+		<put-attribute name="main">/tiles/main.jsp</put-attribute>
+		<put-attribute name="news-letter">/tiles/news-letter.jsp</put-attribute>
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="dangnhap_form" template="/pages/dangnhap_form.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/login_content.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="dangky_form" template="/pages/dangky_form.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/register_content.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="dangnhap_success" template="/pages/dangnhap.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/login_success.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="dangnhap_error" template="/pages/dangnhap.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/login_error.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="test" template="/pages/testing_page.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/test_content.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="taikhoan" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/account.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="cart" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/cart.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="dangky_success" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/register_success.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="dangky_error" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/register_error.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="adminIndex" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/admin/index.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="adminAccounts" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/admin/accounts.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="adminBrands" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/admin/brands.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+	
+	<definition name="adminMobiles" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/admin/mobiles.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+	
+	<definition name="adminMobileAddForm" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/admin/mobile_add_form.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+
+</tiles-definitions>

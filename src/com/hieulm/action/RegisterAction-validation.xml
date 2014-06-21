@@ -1,0 +1,18 @@
+<!-- <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<validator type="requiredstring"> <param name="username">username</param> 
+		<message>username is invalid</message> </validator> <validator type="email"> 
+		<param name="email">email</param> <message>Email address not valid.</message> 
+		</validator> <validator type="requiredstring"> <param name="password">password</param> 
+		<message>password is invalid</message> </validator> <validator type="requiredstring"> 
+		<param name="firstname">firstname</param> <message>firstname is invalid</message> 
+		</validator> <validator type="requiredstring"> <param name="lastname">lastname</param> 
+		<message>lastname is invalid</message> </validator>
+	<field name="email">
+		<field-validator type="email">
+			<message>Email is invalid</message>
+		</field-validator>
+	</field>
+</validators> -->

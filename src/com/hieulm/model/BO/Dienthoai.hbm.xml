@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 29, 2014 2:54:45 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.hieulm.model.BO.Dienthoai" table="DIENTHOAI">
+  <id name="madienthoai" type="int">
+   <column name="MADIENTHOAI"/>
+   <generator class="increment"/>
+  </id>
+  <property generated="never" lazy="false" name="tendienthoai" type="java.lang.String">
+   <column name="TENDIENTHOAI"/>
+  </property>
+  <many-to-one class="com.hieulm.model.BO.Hinhanh" fetch="join"
+   lazy="false" name="hinhdaidien">
+   <column name="MAHINHDAIDIEN"/>
+  </many-to-one>
+  <many-to-one class="com.hieulm.model.BO.Hangsx" fetch="join"
+   lazy="false" name="hangsx">
+   <column name="MAHANGSX"/>
+  </many-to-one>
+  <many-to-one class="com.hieulm.model.BO.Hedieuhanh" fetch="join"
+   lazy="false" name="hedieuhanh">
+   <column name="MAHEDIEUHANH"/>
+  </many-to-one>
+  <property generated="never" lazy="false" name="soluong" type="int">
+   <column name="SOLUONG"/>
+  </property>
+  <property generated="never" lazy="false" name="gia" type="int">
+   <column name="GIA"/>
+  </property>
+  <property generated="never" lazy="false" name="mausac" type="java.lang.String">
+   <column name="MAUSAC"/>
+  </property>
+  <property generated="never" lazy="false" name="thongtinthem" type="java.lang.String">
+   <column name="THONGTINTHEM"/>
+  </property>
+  <set cascade="save-update" lazy="false" name="hinhanhsp"
+   sort="unsorted" table="HINHANHDIENTHOAI">
+   <key column="MADIENTHOAI"/>
+   <many-to-many class="com.hieulm.model.BO.Hinhanh" column="mahinhanh" unique="false"/>
+  </set>
+  <property generated="never" lazy="false" name="hienthi" type="java.lang.Boolean">
+   <column name="HIENTHI"/>
+  </property>
+  <property generated="never" lazy="false" name="ngaythemvao" type="java.util.Date">
+   <column name="NGAYTHEMVAO"/>
+  </property>
+  <property generated="never" lazy="false" name="chitiet" type="java.lang.String">
+   <column name="CHITIET"/>
+  </property>
+ </class>
+</hibernate-mapping>
