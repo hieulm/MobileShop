@@ -42,7 +42,7 @@
 						<div id="slider">
 							<s:iterator value="dienthoai.hinhanhsp">
 								<a class="lazyImage" href=<s:property value="duongdan"/>></a>
-								
+
 							</s:iterator>
 
 						</div>
@@ -125,14 +125,14 @@
 					</div>
 				</div> --%>
 				<div class="add-to-cart-box">
-					<span class="qty-box"> <label for="qty">Qty:</label> <a
+					<%-- <span class="qty-box"> <label for="qty">Qty:</label> <a
 						href="javascript:void(0)" title="" class="prev add"><img
 							src="images/qty_prev.png" title="" alt="add" />‹</a> <input
 						type="text" value="1" maxlength="12" id="qty"
 						class="input-text qty" name="qty"> <a
 						href="javascript:void(0)" title="" class="next dec add"><img
 							src="images/qty_next.png" title="" alt="" />›</a>
-					</span>
+					</span> --%>
 					<script type="text/javascript">
 						jQuery(document).ready(function() {
 							jQuery(".ajax").colorbox();
@@ -167,9 +167,13 @@
 
 						});
 					</script>
-					<button class="form-button" title="Add to Cart">
-						<span>Add to Cart</span>
-					</button>
+					<form
+						action="${pageContext.request.contextPath}
+											/themsanpham?masanpham=<s:property value="madienthoai"/>
+											&sl=<s:property value="1" />"
+						method="get">
+						<input type="submit" value="Add to Cart" class="form-button">
+					</form>
 					<!-- <ul class="add-to-box">
 						<li><a href="#" title="Add to Wishlist" class="add-wishlist">Add
 								to Wishlist</a></li>
@@ -236,20 +240,18 @@
 			</ul>
 			<script type="text/javascript">
 				var detail = '<s:property value="%{dienthoai.hangsx.tenhangsx}"/>';
-				var tmp = {"var1":"Nothing Here"}
+				var tmp = {
+					"var1" : "Nothing Here"
+				}
 				document.getElementById("general").innerHTML = detail["var1"];
 			</script>
 
 		</div>
 
-		<div id="pro-review" class="pro-detail commonContent">
-			
-		</div>
+		<div id="pro-review" class="pro-detail commonContent"></div>
 
-		<div id="pro-tags" class="pro-detail commonContent">
-		</div>
-		<div id="pro-video" class="pro-detail commonContent">
-		</div>
+		<div id="pro-tags" class="pro-detail commonContent"></div>
+		<div id="pro-video" class="pro-detail commonContent"></div>
 
 
 
