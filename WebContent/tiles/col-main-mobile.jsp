@@ -11,11 +11,11 @@
 				<s:property value="%{dienthoais.size()}" />
 				Item(s)
 			</div>
-			<div class="show-per-page">
+			<%-- <div class="show-per-page">
 				<label>Show</label> <select><option>09</option></select>
-			</div>
+			</div> --%>
 		</div>
-		<div class="view-by-block">
+		<%-- <div class="view-by-block">
 			<ul class="view-by">
 				<li>View as:</li>
 				<li><a href="#" title="Grid" class="grid">Grid</a></li>
@@ -24,7 +24,7 @@
 			<div class="short-by">
 				<label>Sort By</label><select><option>Position</option></select>
 			</div>
-		</div>
+		</div> --%>
 	</div>
 	<div class="new-product-block">
 		<s:iterator value="dienthoais" status="status">
@@ -32,12 +32,16 @@
 				<ul class="product-grid">
 					<li>
 						<div class="pro-img">
-							<img title="Freature Product" alt="Freature Product"
-								src=<s:property value="%{hinhdaidien.duongdan}"/> />
+							<a
+								href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><img
+								title="Freature Product" alt="Freature Product"
+								src=<s:property value="%{hinhdaidien.duongdan}"/> /></a>
+
 						</div>
 						<div class="pro-content">
 							<p>
-								<a href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><s:property
+								<a
+									href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><s:property
 										value="tendienthoai" /></a>
 							</p>
 
@@ -48,18 +52,19 @@
 							</s:text>
 						</div>
 						<div class="pro-btn-block">
-							<a class="add-cart left" href="${pageContext.request.contextPath}
+							<a class="add-cart left"
+								href="${pageContext.request.contextPath}
 											/themsanpham?masanpham=<s:property value="madienthoai"/>
-											&sl=<s:property value="1" />" title="Add to Cart">Add to
-								Cart</a> <a class="add-cart right quickCart inline"
-								href="#quick-view-container" title="Quick View">Quick View</a>
-						</div>
-						<div class="pro-link-block">
+											&sl=<s:property value="1" />"
+								title="Add to Cart">Add to Cart</a>
+							<!-- <a class="add-cart right quickCart inline"
+								href="#quick-view-container" title="Quick View">Quick View</a> -->
+						</div> <!-- <div class="pro-link-block">
 							<a class="add-wishlist left" href="#" title="Add to wishlist">Add
 								to wishlist</a> <a class="add-compare right" href="#"
 								title="Add to Compare">Add to Compare</a>
 							<div class="clearfix"></div>
-						</div>
+						</div> -->
 					</li>
 			</s:if>
 			<s:elseif test="%{#status.index %3 == 0}">
@@ -67,12 +72,15 @@
 				<ul class="product-grid">
 					<li>
 						<div class="pro-img">
-							<img title="Freature Product" alt="Freature Product"
-								src=<s:property value="%{hinhdaidien.duongdan}"/> />
+							<a
+								href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><img
+								title="Freature Product" alt="Freature Product"
+								src=<s:property value="%{hinhdaidien.duongdan}"/> /></a>
 						</div>
 						<div class="pro-content">
 							<p>
-								<a href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><s:property
+								<a
+									href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><s:property
 										value="tendienthoai" /></a>
 							</p>
 
@@ -83,30 +91,29 @@
 							</s:text>
 						</div>
 						<div class="pro-btn-block">
-							<a class="add-cart left" href="${pageContext.request.contextPath}
+							<a class="add-cart left"
+								href="${pageContext.request.contextPath}
 											/themsanpham?masanpham=<s:property value="madienthoai"/>
-											&sl=<s:property value="1" />" title="Add to Cart">Add to
-								Cart</a> <a class="add-cart right quickCart inline"
-								href="#quick-view-container" title="Quick View">Quick View</a>
-						</div>
-						<div class="pro-link-block">
-							<a class="add-wishlist left" href="#" title="Add to wishlist">Add
-								to wishlist</a> <a class="add-compare right" href="#"
-								title="Add to Compare">Add to Compare</a>
-							<div class="clearfix"></div>
+											&sl=<s:property value="1" />"
+								title="Add to Cart">Add to Cart</a>
+							<!-- <a class="add-cart right quickCart inline"
+								href="#quick-view-container" title="Quick View">Quick View</a> -->
 						</div>
 					</li>
 			</s:elseif>
 			<s:else>
 				<li>
 					<div class="pro-img">
-						<img title="Freature Product" alt="Freature Product"
-							src=<s:property value="%{hinhdaidien.duongdan}"/> />
+						<a
+							href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><img
+							title="Freature Product" alt="Freature Product"
+							src=<s:property value="%{hinhdaidien.duongdan}"/> /></a>
 					</div>
 					<div class="pro-content">
 						<p>
-							<a href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><s:property
-										value="tendienthoai" /></a>
+							<a
+								href='${pageContext.request.contextPath}/chitietdienthoai?masp=<s:property value="madienthoai"/>'><s:property
+									value="tendienthoai" /></a>
 						</p>
 
 					</div>
@@ -116,18 +123,20 @@
 						</s:text>
 					</div>
 					<div class="pro-btn-block">
-						<a class="add-cart left" href="${pageContext.request.contextPath}
+						<a class="add-cart left"
+							href="${pageContext.request.contextPath}
 											/themsanpham?masanpham=<s:property value="madienthoai"/>
-											&sl=<s:property value="1" />" title="Add to Cart">Add to
-								Cart</a> <a class="add-cart right quickCart inline"
-							href="#quick-view-container" title="Quick View">Quick View</a>
+											&sl=<s:property value="1" />"
+							title="Add to Cart">Add to Cart</a> <!-- <a
+							class="add-cart right quickCart inline"
+							href="#quick-view-container" title="Quick View">Quick View</a> -->
 					</div>
-					<div class="pro-link-block">
+					<!-- <div class="pro-link-block">
 						<a class="add-wishlist left" href="#" title="Add to wishlist">Add
 							to wishlist</a> <a class="add-compare right" href="#"
 							title="Add to Compare">Add to Compare</a>
 						<div class="clearfix"></div>
-					</div>
+					</div> -->
 				</li>
 			</s:else>
 		</s:iterator>
@@ -139,11 +148,11 @@
 				<s:property value="%{dienthoais.size()}" />
 				Item(s)
 			</div>
-			<div class="show-per-page">
+			<%-- <div class="show-per-page">
 				<label>Show</label> <select><option>09</option></select>
-			</div>
+			</div> --%>
 		</div>
-		<div class="view-by-block">
+		<%-- <div class="view-by-block">
 			<ul class="view-by">
 				<li>View as:</li>
 				<li><a href="#" title="Grid" class="grid">Grid</a></li>
@@ -152,6 +161,6 @@
 			<div class="short-by">
 				<label>Sort By</label><select><option>Position</option></select>
 			</div>
-		</div>
+		</div> --%>
 	</div>
 </div>

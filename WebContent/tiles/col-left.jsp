@@ -9,7 +9,7 @@
 				List<Hedieuhanh> hedieuhanhs = Category.getHedieuhanh();
 				for(Iterator<Hedieuhanh> iterator = hedieuhanhs.iterator(); iterator.hasNext();){
 					Hedieuhanh tmp = iterator.next();
-					out.println("<li><a href=\"\">" + tmp.getTenhedieuhanh()+"</a></li>");
+					out.println("<li><a href=\"xemtheohedieuhanh?maos=" + tmp.getMahedieuhanh()+ "\">" + tmp.getTenhedieuhanh()+"</a></li>");
 				}
 			%>
 		</ul>
@@ -18,14 +18,14 @@
 		<div class="block-title">SHOP BY</div>
 		<ul>
 			<li>Price</li>
-			<li><a href="#" title="0 - 1,999,999">0 - 1,999,999 &#8363</a></li>
-			<li><a href="#" title="2,000,000 - 4,999,999">2,000,000 -
+			<li><a href="${pageContext.request.contextPath}/xemtheogia?minPrice=0&maxPrice=1999999" title="0 - 1,999,999">0 - 1,999,999 &#8363</a></li>
+			<li><a href="${pageContext.request.contextPath}/xemtheogia?minPrice=2000000&maxPrice=4999999" title="2,000,000 - 4,999,999">2,000,000 -
 					4,999,999 &#8363</a></li>
-			<li><a href="#" title="5,000,000 - 7,999,999">5,000,000 -
+			<li><a href="${pageContext.request.contextPath}/xemtheogia?minPrice=5000000&maxPrice=7999999" title="5,000,000 - 7,999,999">5,000,000 -
 					7,999,999 &#8363</a></li>
-			<li><a href="#" title="8,000,000 - 11,999,999">8,000,000 -
+			<li><a href="${pageContext.request.contextPath}/xemtheogia?minPrice=8000000&maxPrice=11999999" title="8,000,000 - 11,999,999">8,000,000 -
 					11,999,999 &#8363</a></li>
-			<li><a href="#" title=">12,000,000">&#8805 12,000,000 &#8363</a></li>
+			<li><a href="${pageContext.request.contextPath}/xemtheogia?minPrice=12000000" title=">12,000,000">&#8805 12,000,000 &#8363</a></li>
 		</ul>
 	</div>
 	<!-- <div class="block compare-block">

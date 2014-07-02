@@ -43,6 +43,16 @@
 			<result name="success" type="tiles">dienthoai</result>
 			<result name="error" type="tiles">index</result>
 		</action>
+		
+		<action name="xemtheohedieuhanh" class="com.hieulm.action.ViewMobileByOsAction">
+			<result name="success" type="tiles">dienthoai</result>
+			<result name="error" type="tiles">index</result>
+		</action>
+		
+		<action name="xemtheogia" class="com.hieulm.action.ViewMobileByPriceAction">
+			<result name="success" type="tiles">dienthoai</result>
+			<result name="error" type="tiles">index</result>
+		</action>
 
 		<action name="chitietdienthoai" class="com.hieulm.action.MobileDetailAction">
 			<result name="success" type="tiles">chitiet</result>
@@ -78,8 +88,6 @@
 			<result name="error" type="tiles">index</result>
 		</action>
 
-
-
 		<action name="taikhoan" class="com.hieulm.action.AccountAction">
 			<result name="success" type="tiles">taikhoan</result>
 			<result name="error" type="tiles">index</result>
@@ -108,6 +116,18 @@
 			</result>
 			<result name="error" type="redirectAction">
 				<param name="actionName">xemgiohang</param>
+			</result>
+		</action>
+
+		<action name="about_us" class="com.hieulm.action.AboutAction">
+			<result name="success" type="tiles">
+				about_us
+			</result>
+		</action>
+		
+		<action name="contact_us" class="com.hieulm.action.AboutAction">
+			<result name="success" type="tiles">
+				contact_us
 			</result>
 		</action>
 
@@ -149,12 +169,12 @@
 			<result name="success" type="tiles">adminBrands</result>
 			<result name="error" type="tiles">dangnhap_form</result>
 		</action>
-		
+
 		<action name="mobiles" class="com.hieulm.action.admin.MobilesAction">
 			<result name="success" type="tiles">adminMobiles</result>
 			<result name="error" type="tiles">dangnhap_form</result>
 		</action>
-		
+
 		<action name="add_mobile_form" class="com.hieulm.action.admin.MobileAddFormAction">
 			<result name="success" type="tiles">adminMobileAddForm</result>
 			<result name="error" type="tiles">dangnhap_form</result>

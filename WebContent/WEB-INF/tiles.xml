@@ -86,6 +86,20 @@
 		<put-attribute name="content" value="/tiles/cart.jsp" />
 		<put-attribute name="footer" value="/tiles/footer.jsp" />
 	</definition>
+	
+	<definition name="about_us" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/about_us.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
+	
+	<definition name="contact_us" template="/pages/basic.jsp">
+		<put-attribute name="head">/tiles/head.jsp</put-attribute>
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="content" value="/tiles/contact_us.jsp" />
+		<put-attribute name="footer" value="/tiles/footer.jsp" />
+	</definition>
 
 	<definition name="dangky_success" template="/pages/basic.jsp">
 		<put-attribute name="head">/tiles/head.jsp</put-attribute>

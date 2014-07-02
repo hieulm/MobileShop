@@ -167,13 +167,13 @@
 
 						});
 					</script>
-					<form
-						action="${pageContext.request.contextPath}
-											/themsanpham?masanpham=<s:property value="madienthoai"/>
+					<div class="pro-btn-block">
+						<a class="form-button"
+							href="${pageContext.request.contextPath}
+											/themsanpham?masanpham=<s:property value="%{dienthoai.madienthoai}"/>
 											&sl=<s:property value="1" />"
-						method="get">
-						<input type="submit" value="Add to Cart" class="form-button">
-					</form>
+							title="Add to Cart">Add to Cart</a>
+					</div>
 					<!-- <ul class="add-to-box">
 						<li><a href="#" title="Add to Wishlist" class="add-wishlist">Add
 								to Wishlist</a></li>
@@ -222,13 +222,14 @@
 		</script>
 		<ul class="tab-block">
 			<li><a href="#pro-detail" title="Description" class="active">Description</a></li>
-			<li><a href="#pro-review" title="Reviews">Reviews</a></li>
-			<li><a href="#pro-tags" title="Product Tags">Product Tags</a></li>
+			<!-- <li><a href="#pro-review" title="Reviews">Reviews</a></li>
+			<li><a href="#pro-tags" title="Product Tags">Product Tags</a></li> -->
 			<li class="video-box"><a href="#pro-video" title="Video Box">Video
 					Box</a></li>
 		</ul>
 		<div id="pro-detail" class="pro-detail commonContent">
-			<ul>
+			<s:property value="%{dienthoai.chitiet}" />
+			<!-- <ul>
 				<li id="general"></li>
 				<li>Screen</li>
 				<li>Sound</li>
@@ -237,24 +238,19 @@
 				<li>Camera</li>
 				<li>Features</li>
 				<li>Pin</li>
-			</ul>
-			<script type="text/javascript">
+			</ul> -->
+			<%-- <script type="text/javascript">
 				var detail = '<s:property value="%{dienthoai.hangsx.tenhangsx}"/>';
 				var tmp = {
 					"var1" : "Nothing Here"
 				}
 				document.getElementById("general").innerHTML = detail["var1"];
-			</script>
-
+			</script> --%>
 		</div>
 
 		<div id="pro-review" class="pro-detail commonContent"></div>
-
 		<div id="pro-tags" class="pro-detail commonContent"></div>
 		<div id="pro-video" class="pro-detail commonContent"></div>
-
-
-
 
 	</section>
 	<!-- chưa được triển khai -->

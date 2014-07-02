@@ -5,9 +5,21 @@ table {
 	border-collapse: collapse;
 }
 
-table,td,th {
+table, td, th {
 	border: 1px solid black;
 	padding: 5px;
+}
+
+.button {
+	font: bold 11px Arial;
+	text-decoration: none;
+	background-color: #EEEEEE;
+	color: #333333;
+	padding: 2px 6px 2px 6px;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	border-left: 1px solid #CCCCCC;
 }
 </style>
 
@@ -39,21 +51,19 @@ table,td,th {
 				<s:set var="total" value="0" />
 				<s:iterator value="#session.cart.cartList">
 					<tr>
-						<td id="masanpham"><s:property value="%{product.madienthoai}" /></td>
-						<td><s:property value="%{product.tendienthoai}" /></td>
-						<td><input type="text" size="1" id="sl"
-							value=<s:property value="quantity"/>></td>
-						<td><s:text name="format.money">
-								<s:param name="gia" value="%{product.gia}"></s:param>
-							</s:text></td>
-						<td>
-							<form action="${pageContext.request.contextPath}
-											/capnhatgiohang?masanpham=<s:property value="%{product.madienthoai}"/>
-											&sl=<s:property value="-quantity" />">
-								<input type="submit" value="Update">
-							</form>
-						</td>
-
+						<form action="${pageContext.request.contextPath}/capnhatgiohang" method="get">
+							<td id="masanpham"><s:property
+									value="%{product.madienthoai}" /></td> 
+							<input type="text" size="1" hidden="true" name="masanpham" value=<s:property value="%{product.madienthoai}"/>>
+							<td><s:property value="%{product.tendienthoai}" /></td>
+							<td><input type="text" size="1" id="productQty" name="sl"
+								value=<s:property value="quantity"/>></td>
+							<td><s:text name="format.money">
+									<s:param name="gia" value="%{product.gia}"></s:param>
+								</s:text></td>
+							<td><input type="Submit" class="updateQty" value="Update" />
+							</td>
+						</form>
 					</tr>
 					<s:set var="total" value="#total + product.gia * quantity" />
 				</s:iterator>

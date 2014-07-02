@@ -16,9 +16,9 @@
 				</s:else>
 				<!-- <li class="my-wishlist"><a href="404_error.html"
 					title="My Wishlist">My Wishlist</a></li> -->
-				<li class="contact-us"><a href="#" title="Contact Us">Contact
+				<li class="contact-us"><a href="${pageContext.request.contextPath}/contact_us" title="Contact Us">Contact
 						Us</a></li>
-				<li class="checkout"><a href="#" title="Checkout">Checkout</a></li>
+				<!-- <li class="checkout"><a href="#" title="Checkout">Checkout</a></li> -->
 				<!-- kiểm tra session để hiển thị tên đăng nhập -->
 				<s:if test="#session.username == null">
 					<li class="log-in"><a
@@ -121,7 +121,7 @@
 		</h1>
 		<nav id="smoothmenu1" class="ddsmoothmenu mainMenu">
 			<ul id="nav">
-				<li class="active"><a
+				<li ><a
 					href="${pageContext.request.contextPath}/index" title="Home">Home</a></li>
 				<li class=""><a href="${pageContext.request.contextPath}/#"
 					title="Shop by">Shop by</a>
@@ -144,18 +144,18 @@
 								</s:iterator>
 							</ul></li>
 					</ul></li>
+				<%-- <li class=""><a
+					href="${pageContext.request.contextPath}/blog.html" title="Blog">Blog</a></li> --%>
+				<%-- <li class=""><a
+					href="${pageContext.request.contextPath}/faq.html" title="Faq">Faq</a></li> --%>
 				<li class=""><a
-					href="${pageContext.request.contextPath}/blog.html" title="Blog">Blog</a></li>
-				<li class=""><a
-					href="${pageContext.request.contextPath}/faq.html" title="Faq">Faq</a></li>
-				<li class=""><a
-					href="${pageContext.request.contextPath}/about_us.html"
+					href="${pageContext.request.contextPath}/about_us"
 					title="About us">About us</a></li>
-				<li class=""><a
+				<%-- <li class=""><a
 					href="${pageContext.request.contextPath}/404_error.html"
-					title="Pages">Pages</a></li>
+					title="Pages">Pages</a></li> --%>
 				<li class=""><a
-					href="${pageContext.request.contextPath}/contact_us.html"
+					href="${pageContext.request.contextPath}/contact_us"
 					title="Footwear">Contact us</a></li>
 			</ul>
 		</nav>
@@ -184,7 +184,7 @@
 					<li class=""><a
 						href="${pageContext.request.contextPath}/faq.html" title="Faq">Faq</a></li>
 					<li class=""><a
-						href="${pageContext.request.contextPath}/about_us.html"
+						href="${pageContext.request.contextPath}/about_us"
 						title="About us">About us</a></li>
 					<li class=""><a
 						href="${pageContext.request.contextPath}/404_error.html"
